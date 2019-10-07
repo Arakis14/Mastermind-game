@@ -3,7 +3,7 @@ Simple project of writing a mastermind game using TDD
 
 ### Build
 
-[![Build Status](https://travis-ci.org/Arakis14/Mastermind-game)]
+[![Build Status](https://travis-ci.org/Arakis14/Mastermind-game.svg?branch=master)](https://travis-ci.org/Arakis14/Mastermind-game)
 
 ### Compilation
 
