@@ -1,17 +1,18 @@
 #pragma once
+#include <iostream>
 
-enum class Color : char
+enum class Color :  char
 {
-    RED,
-    BLUE,
-    GREEN,
-    YELLOW
+    RED = 'R',
+    BLUE = 'B',
+    GREEN = 'G',
+    YELLOW = 'Y',
 };
 
 class Pins
 {
 private:
-    Color color = Color::RED;
+    Color color;
 public:
     Pins() = default;
     Pins(Color c);
