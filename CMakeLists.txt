@@ -41,6 +41,7 @@ project(Mastermind)
 
 set(SRC_LIST
     src/main.cpp
+    src/Game.cpp
 )
 
 include_directories(inc)
@@ -56,6 +57,7 @@ endif (UNIX)
 
 set(GTEST_SRC_LIST
     tests/test_main.cpp
+    tests/test_Game.cpp
 )
 
 link_libraries(gtest)
