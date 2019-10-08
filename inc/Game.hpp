@@ -6,4 +6,5 @@ private:
 
 public:
     Game() = default;
+    int PrintIntroduction();
 };

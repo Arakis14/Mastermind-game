@@ -3,5 +3,7 @@
 
 int main ()
 {
+    Game g;
+    g.PrintIntroduction();
     return 0;
 }
