@@ -31,3 +31,12 @@ TEST(MastermindTest, IsGameOver)
     //THEN
     ASSERT_TRUE(result);
 }
+TEST(MastermindTest, CanGamePlay)
+{
+    //GIVEN
+    Game g;
+    //WHEN
+    auto result = g.Play();
+    //THEN
+    ASSERT_TRUE(result);
+}

@@ -9,3 +9,11 @@ int Game::PrintIntroduction()
     std::cout << "R - red, G - green, B - blue, Y - yellow ...";
     return 15;
 }
+bool Game::Play()
+{
+    while(chances_ > 0)
+    {
+        --chances_;
+    }
+    return true;
+}

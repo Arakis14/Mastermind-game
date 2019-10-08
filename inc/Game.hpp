@@ -12,4 +12,5 @@ public:
     bool GetGameOver_() {return GameOver_;}
     void SetGameOver_(bool GameOver) {GameOver_ = GameOver;}
     int PrintIntroduction();
+    bool Play();
 };
