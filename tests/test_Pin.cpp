@@ -22,6 +22,7 @@ TEST(PinTest, CanToStingNegaive)
     //THEN
     ASSERT_NE(expected,result);
 }
+
 TEST(PinTest, CanToStingPositive)
 {
     //Given
@@ -32,4 +33,19 @@ TEST(PinTest, CanToStingPositive)
     auto result = p.ToString();
     //THEN
     ASSERT_EQ(expected,result);
+}
+
+TEST(PinTest, CanEqualOperatorTrue)
+{
+    Pin p(Pin::Color::RED);
+    Pin p2(Pin::Color::RED);
+    auto result = p == p2;
+    ASSERT_TRUE(result);
+}
+TEST(PinTest, CanEqualOperatorFalse)
+{
+    Pin p(Pin::Color::RED);
+    Pin p2(Pin::Color::BLUE);
+    auto result = p == p2;
+    ASSERT_FALSE(result);
 }
