@@ -11,6 +11,12 @@ int main ()
 
     Pin testpin(Pin::Color::BLUE);
     testpin.SetColor(Pin::Color::RED);
+    testpin.SetColor(Pin::Color::YELLOW);
+    Pin anothertestpin(Pin::Color::BLUE);
+    auto res = testpin.ToString();
+    std::cout << res << "\n";
+    auto result = testpin == anothertestpin;
+    std::cout << result;
 
     return 0;
 }

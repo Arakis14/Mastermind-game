@@ -12,11 +12,11 @@ public:
         GREEN = 'G',
         YELLOW = 'Y',
     };
-    friend std::ostream &operator << (std::ostream out, const Pin &p);
+    friend bool operator==(const Pin &lhs, const Pin &rhs);
     Pin() = default;
     Pin(Color c);
     void SetColor(Color color);
-    std::string toString() const;
+    std::string ToString() const;
 
     private:
     Color color_;
