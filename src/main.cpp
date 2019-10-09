@@ -21,5 +21,16 @@ int main ()
     collection.AddPin(testpin);
     collection.AddPin(anothertestpin);
     collection.PrintPins();
+
+    Pin testpinx(Pin::Color::BLUE);
+    Pin testpiny(Pin::Color::GREEN);
+
+    Pins test;
+    test.AddPin(testpinx);
+    test.AddPin(testpiny);
+    test.PrintPins();
+
+    auto result = test==collection;
+    std::cout << result;
     return 0;
 }
