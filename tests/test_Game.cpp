@@ -1,6 +1,12 @@
 #include <gtest/gtest.h>
 #include "Game.hpp"
 
+TEST(MastermindTest, CanConstructGame)
+{
+    //GIVEN
+    Game g;
+}
+
 TEST(MastermindTest, CanPrintIntroduction)
 {
     //GIVEN
