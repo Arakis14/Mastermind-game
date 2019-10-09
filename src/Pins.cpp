@@ -1,5 +1,7 @@
 #include "Pins.hpp"
 #include <algorithm>
+
+
 void Pins::AddPin(const Pin &pin)
 {
     pins_.emplace_back(pin);
