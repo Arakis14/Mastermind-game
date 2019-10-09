@@ -1,15 +1,6 @@
 #include <gtest/gtest.h>
 #include "Game.hpp"
 
-TEST(MastermindTest, CanCreateGame)
-{
-    //GIVEN
-    Game g;
-
-    //WHEN
-
-    //THEN
-}
 TEST(MastermindTest, CanPrintIntroduction)
 {
     //GIVEN
@@ -21,16 +12,7 @@ TEST(MastermindTest, CanPrintIntroduction)
     //THEN
     ASSERT_EQ(result,15);
 }
-TEST(MastermindTest, IsGameOver)
-{
-    //GIVEN
-    Game g;
-    g.SetGameOver_(true);
-    //WHEN
-    auto result = g.GetGameOver_();
-    //THEN
-    ASSERT_TRUE(result);
-}
+
 TEST(MastermindTest, CanGamePlay)
 {
     //GIVEN

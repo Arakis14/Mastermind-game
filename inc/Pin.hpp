@@ -9,11 +9,11 @@ enum class Color :  char
     YELLOW = 'Y',
 };
 
-class Pins
+class Pin
 {
 private:
     Color color;
 public:
-    Pins() = default;
-    Pins(Color c);
+    Pin() = default;
+    Pin(Color c);
 };

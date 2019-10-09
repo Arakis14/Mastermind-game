@@ -1,5 +1,5 @@
 #pragma once
-#include "Pins.hpp"
+#include "Pin.hpp"
 
 class Game
 {
