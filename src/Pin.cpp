@@ -2,5 +2,7 @@
 
 
 Pin::Pin(Color c)
-    :color(c)
+    :color_(c)
 {}
+
+void Pin::SetColor(Color color) { color_= color; }
