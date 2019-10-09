@@ -18,6 +18,6 @@ public:
     void SetColor(Color color);
     std::string ToString() const;
 
-    private:
+    protected:
     Color color_;
 };

@@ -2,12 +2,12 @@
 #include "Pin.hpp"
 #include <vector>
 
-
 class Pins 
 {
 public:
 Pins() = default;
 void AddPin(const Pin &pin);
-private:
+void PrintPins();
+protected:
 std::vector<Pin> pins_;
 };

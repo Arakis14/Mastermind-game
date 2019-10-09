@@ -15,8 +15,11 @@ int main ()
     Pin anothertestpin(Pin::Color::BLUE);
     auto res = testpin.ToString();
     std::cout << res << "\n";
-    auto result = testpin == anothertestpin;
-    std::cout << result;
-
+    // auto result = testpin == anothertestpin;
+    // std::cout << result;
+    Pins collection;
+    collection.AddPin(testpin);
+    collection.AddPin(anothertestpin);
+    collection.PrintPins();
     return 0;
 }

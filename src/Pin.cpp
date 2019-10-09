@@ -1,6 +1,7 @@
 #include "Pin.hpp"
 #include <sstream>
 #include <iomanip>
+#include <iostream>
 
 
 Pin::Pin(Color c)
@@ -17,12 +18,12 @@ std::string Pin::ToString() const
     std::stringstream ss;
     ss << std::left;
     if (color_ == Color::RED)
-        ss << std::setw(1) << "Color: " << static_cast<char>(color_);
+        ss << std::setw(1) << static_cast<char>(color_);
     else if (color_ == Color::BLUE)
-        ss << std::setw(1) << "Color: " << static_cast<char>(color_);
+        ss << std::setw(1) << static_cast<char>(color_);
     else if (color_ == Color::GREEN)
-        ss << std::setw(1) << "Color: " << static_cast<char>(color_);
+        ss << std::setw(1) << static_cast<char>(color_);
     else if (color_ == Color::YELLOW)
-        ss << std::setw(1) << "Color: " << static_cast<char>(color_);
+        ss << std::setw(1) << static_cast<char>(color_);
     return ss.str();
 }
