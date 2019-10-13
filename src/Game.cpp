@@ -18,14 +18,24 @@ bool Game::Play()
     return true;
 }
 
-void Game::PlayerInput()
+Pins Game::PlayerInput()
 {
     std::cout << "Enter your guess: \n";
     char a,b,c,d;
     std::cin >> a >> b >> c >> d;
+    auto PinA = CharToPin(a);
+    auto PinB = CharToPin(b);
+    auto PinC = CharToPin(c);
+    auto PinD = CharToPin(d);
+    Pins PlayerPins{};
+    PlayerPins.AddPin(PinA);
+    PlayerPins.AddPin(PinB);
+    PlayerPins.AddPin(PinC);
+    PlayerPins.AddPin(PinD);
+    return PlayerPins;
 }
 
-Pin Game::CharToPins(char character)
+Pin Game::CharToPin(char & character)
 {
     if (toupper(character) == 'G')
         return Pin::Color::GREEN;
