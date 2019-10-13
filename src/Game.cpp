@@ -17,3 +17,22 @@ bool Game::Play()
     }
     return true;
 }
+
+void Game::PlayerInput()
+{
+    std::cout << "Enter your guess: \n";
+    char a,b,c,d;
+    std::cin >> a >> b >> c >> d;
+}
+
+Pin Game::CharToPins(char character)
+{
+    if (toupper(character) == 'G')
+        return Pin::Color::GREEN;
+    else if (toupper(character) == 'B')
+        return Pin::Color::BLUE;
+    else if (toupper(character) == 'R')
+        return Pin::Color::RED;
+    else if (toupper(character) == 'Y')
+        return Pin::Color::YELLOW;
+}

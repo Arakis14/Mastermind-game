@@ -21,7 +21,7 @@ int main ()
     srand(time(NULL));
     Game g;
     Pins pins;
-    GetRandomPins(pins);
-    pins.PrintPins();
+    Pin a {};
+    g.PlayerInput();
     return 0;
 }

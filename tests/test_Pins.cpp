@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "Pins.hpp"
+#include "Combinations.hpp"
 
 TEST(PinsTest, CanAddPin)
 {
