@@ -8,6 +8,8 @@ private:
 int chances_{};
 bool GameOver_{};
 Pins PinsToSolve {};
+Pins PlayerPins{};
+
 public:
     Game() = default;
     int GetChances_() {return chances_;}
@@ -19,4 +21,6 @@ public:
     Pins PlayerInput();
     Pin CharToPin(char & character);
     void SetUpGame();
+    void GameOver();
+    void GameWon();
 };

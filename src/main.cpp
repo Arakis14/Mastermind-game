@@ -18,8 +18,8 @@ int main ()
 {
     srand(time(NULL));
     Game game;
-    Pins pinstosolve;
-    Pins playerpins;
+    game.SetUpGame();
+    game.Play();
 
     return 0;
 }

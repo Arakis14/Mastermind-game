@@ -9,6 +9,14 @@ TEST(PinsTest, CanAddPin)
     collection.AddPin(p);
     //WHEN
 }
+TEST(PinsTest, CanDeletePins)
+{
+    Pins collection;
+    collection.GetRandomPins();
+    collection.PrintPins();
+    collection.DeletePins();
+    collection.PrintPins();
+}
 TEST(PinsTest, CanComparePinsNegative)
 {
     //Given

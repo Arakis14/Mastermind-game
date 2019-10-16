@@ -6,6 +6,11 @@ void Pins::AddPin(const Pin &pin)
 {
     pins_.emplace_back(pin);
 }
+
+void Pins::DeletePins()
+{
+    pins_.clear();
+}
 void Pins::PrintPins()
 {
     std::vector<std::string>v{};

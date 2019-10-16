@@ -21,7 +21,10 @@ bool Game::Play()
     while(GameOver_ != true)
     {
         auto PlayerResult = PlayerInput();
-        
+        if (PlayerResult == PinsToSolve)
+        {
+            SetGameOver_(true);
+        }
     }
     return true;
 }
@@ -36,7 +39,6 @@ Pins Game::PlayerInput()
     auto PinB = CharToPin(b);
     auto PinC = CharToPin(c);
     auto PinD = CharToPin(d);
-    Pins PlayerPins{};
     PlayerPins.AddPin(PinA);
     PlayerPins.AddPin(PinB);
     PlayerPins.AddPin(PinC);

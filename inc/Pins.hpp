@@ -8,6 +8,7 @@ class Pins
 public:
 Pins() = default;
 void AddPin(const Pin &pin);
+void DeletePins();
 void PrintPins();
 friend bool operator==(const Pins &lhs, const Pins &rhs);
 void GetRandomPins();
