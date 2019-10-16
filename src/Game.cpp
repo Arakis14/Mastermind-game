@@ -9,17 +9,26 @@ int Game::PrintIntroduction()
     std::cout << "R - red, G - green, B - blue, Y - yellow ...";
     return 15;
 }
+
+void Game::SetUpGame()
+{
+    SetGameOver_(false);
+    SetChances_(10);
+    PinsToSolve.GetRandomPins();
+}
 bool Game::Play()
 {
-    while(chances_ > 0)
+    while(GameOver_ != true)
     {
-        --chances_;
+        auto PlayerResult = PlayerInput();
+        
     }
     return true;
 }
 
 Pins Game::PlayerInput()
 {
+    
     std::cout << "Enter your guess: \n";
     char a,b,c,d;
     std::cin >> a >> b >> c >> d;
@@ -32,7 +41,7 @@ Pins Game::PlayerInput()
     PlayerPins.AddPin(PinB);
     PlayerPins.AddPin(PinC);
     PlayerPins.AddPin(PinD);
-    return PlayerPins;
+    return PlayerPins;  
 }
 
 Pin Game::CharToPin(char & character)

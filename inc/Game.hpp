@@ -5,8 +5,9 @@
 class Game
 {
 private:
-int chances_ {10};
-bool GameOver_ {false};
+int chances_{};
+bool GameOver_{};
+Pins PinsToSolve {};
 public:
     Game() = default;
     int GetChances_() {return chances_;}
@@ -17,4 +18,5 @@ public:
     bool Play();
     Pins PlayerInput();
     Pin CharToPin(char & character);
+    void SetUpGame();
 };

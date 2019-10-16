@@ -1,6 +1,6 @@
 #include "Pins.hpp"
 #include <algorithm>
-
+#include <ctime>
 
 void Pins::AddPin(const Pin &pin)
 {
@@ -19,6 +19,17 @@ void Pins::PrintPins()
     }
     std::cout << "\n";
 }
+void Pins::GetRandomPins()
+{
+    int random {};
+    pins_.clear();
+    for (auto i = 0; i < 4; i++)
+    {
+        random = rand() % 4;
+        AddPin(testCombination1.at(random));
+    }
+}
+
 bool operator==(const Pins &lhs, const Pins &rhs)
 {
     if (lhs.pins_.size() != rhs.pins_.size())

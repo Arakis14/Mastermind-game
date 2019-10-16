@@ -1,4 +1,5 @@
 #pragma once
+#include "Combinations.hpp"
 #include "Pin.hpp"
 #include <vector>
 
@@ -9,6 +10,7 @@ Pins() = default;
 void AddPin(const Pin &pin);
 void PrintPins();
 friend bool operator==(const Pins &lhs, const Pins &rhs);
+void GetRandomPins();
 protected:
 std::vector<Pin> pins_;
 };
