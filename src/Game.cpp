@@ -21,6 +21,8 @@ bool Game::Play()
 {
     while(GameOver_ != true)
     {
+        int BlackPins{};
+        int WhitePins{};
         PinsToSolve.PrintPins(); // debugg
         auto PlayerResult = PlayerInput();
         if (chances_ == 0)
@@ -33,6 +35,8 @@ bool Game::Play()
                 std::cout << "Wrong, you have " << GetChances_() << " left.\n";
                 BlackPins = FindBlackPins();
                 std::cout << "Number of black pins: " << BlackPins << "\n";
+                WhitePins = FindWhitePins();
+                std::cout << "Number of white pins: " << WhitePins << "\n";
             }
     }
     return true;
@@ -81,12 +85,21 @@ void Game::GameWon()
 
 int Game::FindWhitePins()
 {
-
+    int WhitePins{};
+    for (auto i = 0; i < 4; ++i)
+    {
+        for (auto j = i + 1; j < 4; j++)
+        {
+            if(PinsToSolve[i] == PlayerPins[j])
+                ++WhitePins;
+        }
+    }
+    return WhitePins;
 }
 
 int Game::FindBlackPins()
 {
-    int BlackPins {};
+    int BlackPins{};
     for (auto i = 0; i < 4; ++i)
     {
         if(PinsToSolve[i] == PlayerPins[i])

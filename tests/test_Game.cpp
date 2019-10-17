@@ -43,3 +43,19 @@ TEST(MastermindTest, GameOverTest)
     auto result = g.GetGameOver_();
     ASSERT_TRUE(result);
 }
+
+TEST(MastermindTest, SetUpGameTest)
+{
+    Game g;
+    g.SetUpGame();
+    int chances {10};
+    ASSERT_EQ(g.GetChances_(),chances);
+}
+TEST(MastermindTest, FindBlackPinsTests)
+{
+    Game g;
+    int BlackPins{};
+    int expected {1};
+    // BlackPins = g.FindBlackPins();
+    ASSERT_EQ(BlackPins,expected);
+}
