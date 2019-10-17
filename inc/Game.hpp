@@ -9,6 +9,8 @@ int chances_{};
 bool GameOver_{};
 Pins PinsToSolve {};
 Pins PlayerPins{};
+int BlackPins{};
+int WhitePins{};
 
 public:
     Game() = default;
@@ -23,4 +25,6 @@ public:
     void SetUpGame();
     void GameOver();
     void GameWon();
+    int FindWhitePins();
+    int FindBlackPins();
 };

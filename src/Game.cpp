@@ -15,6 +15,7 @@ void Game::SetUpGame()
     SetGameOver_(false);
     SetChances_(10);
     PinsToSolve.GetRandomPins();
+
 }
 bool Game::Play()
 {
@@ -30,6 +31,8 @@ bool Game::Play()
             {
                 --chances_;
                 std::cout << "Wrong, you have " << GetChances_() << " left.\n";
+                BlackPins = FindBlackPins();
+                std::cout << "Number of black pins: " << BlackPins << "\n";
             }
     }
     return true;
@@ -74,4 +77,20 @@ void Game::GameWon()
 {
     std::cout << "You got the right answer! You won :)\n";
     SetGameOver_(true);
+}
+
+int Game::FindWhitePins()
+{
+
+}
+
+int Game::FindBlackPins()
+{
+    int BlackPins {};
+    for (auto i = 0; i < 4; ++i)
+    {
+        if(PinsToSolve[i] == PlayerPins[i])
+                ++BlackPins;
+    }
+    return BlackPins;
 }

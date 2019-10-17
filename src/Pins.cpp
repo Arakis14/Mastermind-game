@@ -41,3 +41,13 @@ bool operator==(const Pins &lhs, const Pins &rhs)
         return false;
     return (std::equal(lhs.pins_.begin(), lhs.pins_.end(),rhs.pins_.begin()));
 }
+
+Pin Pins::operator[] (int index)
+{
+    if (index >= pins_.size())
+    {
+        std::cout << "Index out of bounds, exiting";
+        exit(0);
+    }
+    return pins_.at(index);
+}
