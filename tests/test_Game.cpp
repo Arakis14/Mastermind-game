@@ -28,3 +28,18 @@ TEST(MastermindTest, CanPrintIntroduction)
 //     //THEN
 //     ASSERT_TRUE(result);
 // }
+TEST(MastermindTest, GameWonTest)
+{
+    Game g;
+    g.GameWon();
+    auto result = g.GetGameOver_();
+    ASSERT_TRUE(result);
+}
+
+TEST(MastermindTest, GameOverTest)
+{
+    Game g;
+    g.GameOver();
+    auto result = g.GetGameOver_();
+    ASSERT_TRUE(result);
+}

@@ -20,11 +20,17 @@ bool Game::Play()
 {
     while(GameOver_ != true)
     {
+        PinsToSolve.PrintPins(); // debugg
         auto PlayerResult = PlayerInput();
-        if (PlayerResult == PinsToSolve)
-        {
-            SetGameOver_(true);
-        }
+        if (chances_ == 0)
+            GameOver();
+        else if (PlayerResult == PinsToSolve)
+            GameWon();
+        else 
+            {
+                --chances_;
+                std::cout << "Wrong, you have " << GetChances_() << " left.\n";
+            }
     }
     return true;
 }
@@ -56,4 +62,16 @@ Pin Game::CharToPin(char & character)
         return Pin::Color::RED;
     else if (toupper(character) == 'Y')
         return Pin::Color::YELLOW;
+}
+
+void Game::GameOver()
+{
+    std::cout << "Sorry, you ran out of chances. GameOver :(\n";
+    SetGameOver_(true);
+}
+
+void Game::GameWon()
+{
+    std::cout << "You got the right answer! You won :)\n";
+    SetGameOver_(true);
 }
