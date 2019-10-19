@@ -25,5 +25,9 @@ std::string Pin::ToString() const
         ss << std::setw(1) << static_cast<char>(color_);
     else if (color_ == Color::YELLOW)
         ss << std::setw(1) << static_cast<char>(color_);
+    else if (color_ == Color::PURPLE)
+        ss << std::setw(1) << static_cast<char>(color_);
+    else if (color_ == Color::ORANGE)
+        ss << std::setw(1) << static_cast<char>(color_);
     return ss.str();
 }

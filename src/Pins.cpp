@@ -30,7 +30,7 @@ void Pins::GetRandomPins()
     pins_.clear();
     for (auto i = 0; i < 4; i++)
     {
-        random = rand() % 4;
+        random = rand() % 6;
         AddPin(testCombination1.at(random));
     }
 }

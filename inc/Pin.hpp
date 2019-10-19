@@ -11,6 +11,8 @@ public:
         BLUE = 'B',
         GREEN = 'G',
         YELLOW = 'Y',
+        PURPLE = 'P',
+        ORANGE = 'O',
     };
     friend bool operator==(const Pin &lhs, const Pin &rhs);
     Pin() = default;

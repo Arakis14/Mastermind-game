@@ -3,10 +3,17 @@
 
 int Game::PrintIntroduction()
 {
+    std::cout << "******************************\n";
     std::cout << "Welcome into the Mastermind!\n";
     std::cout << "\n";
     std::cout << "Play the game by typing pins' colours in the terminal.\n";
-    std::cout << "R - red, G - green, B - blue, Y - yellow ...";
+    std::cout << "R - red, G - green, B - blue, Y - yellow , P - purple, O - orange...\n";
+    std::cout << "\n";
+    std::cout << "If you guess wrong I'll help by supporting you with informatons about black & white pins.\n";
+    std::cout << "Black pins indicate how many pins are on the same color and position as in the hidden combination.\n";
+    std::cout << "White pins indicate how many pins are present in combination but are in different position.\n";
+    std::cout << "Have fun!\n";
+    std::cout << "******************************\n";
     return 15;
 }
 
@@ -19,11 +26,14 @@ void Game::SetUpGame()
 }
 bool Game::Play()
 {
+    PrintIntroduction();
     while(GameOver_ != true)
     {
         int BlackPins{};
         int WhitePins{};
+        std::cout << "\nHidden Pins:";
         // PinsToSolve.PrintPins(); // debugg
+        std::cout << "\n";
         auto PlayerResult = PlayerInput();
         if (chances_ == 0)
             GameOver();
@@ -46,7 +56,7 @@ bool Game::Play()
 Pins Game::PlayerInput()
 {
     PlayerPins.DeletePins();
-    std::cout << "Enter your guess: \n";
+    std::cout << "\nEnter your guess: \n";
     char a,b,c,d;
     std::cin >> a >> b >> c >> d;
     auto PinA = CharToPin(a);
@@ -62,6 +72,14 @@ Pins Game::PlayerInput()
 
 Pin Game::CharToPin(char & character)
 {
+    if (toupper(character) != 'G' && 
+        toupper(character) != 'B' &&  
+        toupper(character) != 'R' &&
+        toupper(character) != 'Y' &&
+        toupper(character) != 'P' &&
+        toupper(character) != 'O')
+    std::cerr << "No such coloru as: " << character << "\n";
+    
     if (toupper(character) == 'G')
         return Pin::Color::GREEN;
     else if (toupper(character) == 'B')
@@ -70,11 +88,17 @@ Pin Game::CharToPin(char & character)
         return Pin::Color::RED;
     else if (toupper(character) == 'Y')
         return Pin::Color::YELLOW;
+    else if (toupper(character) == 'P')
+        return Pin::Color::PURPLE;
+    else if (toupper(character) == 'O')
+        return Pin::Color::ORANGE;
 }
 
 void Game::GameOver()
 {
     std::cout << "Sorry, you ran out of chances. GameOver :(\n";
+    std::cout << "The combination was: ";
+    PinsToSolve.PrintPins();
     SetGameOver_(true);
 }
 
