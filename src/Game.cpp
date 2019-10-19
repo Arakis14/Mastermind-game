@@ -23,7 +23,7 @@ bool Game::Play()
     {
         int BlackPins{};
         int WhitePins{};
-        PinsToSolve.PrintPins(); // debugg
+        // PinsToSolve.PrintPins(); // debugg
         auto PlayerResult = PlayerInput();
         if (chances_ == 0)
             GameOver();
@@ -32,11 +32,12 @@ bool Game::Play()
         else 
             {
                 --chances_;
-                std::cout << "Wrong, you have " << GetChances_() << " left.\n";
+                std::cout << "Wrong, you have " << GetChances_() << " chances left.\n";
                 BlackPins = FindBlackPins();
                 std::cout << "Number of black pins: " << BlackPins << "\n";
                 WhitePins = FindWhitePins();
                 std::cout << "Number of white pins: " << WhitePins << "\n";
+                std::cout << "\n";
             }
     }
     return true;
@@ -44,7 +45,7 @@ bool Game::Play()
 
 Pins Game::PlayerInput()
 {
-    
+    PlayerPins.DeletePins();
     std::cout << "Enter your guess: \n";
     char a,b,c,d;
     std::cin >> a >> b >> c >> d;
@@ -85,25 +86,41 @@ void Game::GameWon()
 
 int Game::FindWhitePins()
 {
-    int WhitePins{};
+    int WhitePins{0};
     for (auto i = 0; i < 4; ++i)
     {
-        for (auto j = i + 1; j < 4; j++)
+        if (PlayerMatch.at(i))
+                continue;
+        for (auto j = 0; j < 4; j++)
         {
-            if(PinsToSolve[i] == PlayerPins[j])
-                ++WhitePins;
+            if (i == j || PinsMatch.at(j))
+                continue;
+            if (PlayerPins[i] == PinsToSolve[j])
+            {
+                PinsMatch.at(j) = true;
+                WhitePins++;
+                break;
+            }
         }
     }
+    PlayerMatch.clear();
+    PinsMatch.clear();
+    PlayerMatch.assign(4, false);
+    PinsMatch.assign(4, false);
     return WhitePins;
 }
 
 int Game::FindBlackPins()
 {
-    int BlackPins{};
+    int BlackPins{0};
     for (auto i = 0; i < 4; ++i)
     {
-        if(PinsToSolve[i] == PlayerPins[i])
-                ++BlackPins;
+        if(PlayerPins[i] == PinsToSolve[i])
+        {
+            BlackPins++;
+            PlayerMatch.at(i) = true;
+            PinsMatch.at(i) = true;
+        }
     }
     return BlackPins;
 }

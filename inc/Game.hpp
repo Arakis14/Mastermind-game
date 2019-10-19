@@ -1,6 +1,8 @@
 #pragma once
 #include "Pin.hpp"
 #include "Pins.hpp"
+#include <vector>
+
 
 class Game
 {
@@ -9,6 +11,8 @@ int chances_{};
 bool GameOver_{};
 Pins PinsToSolve {};
 Pins PlayerPins{};
+std::vector<bool> PinsMatch {false, false, false, false};
+std::vector<bool> PlayerMatch {false, false, false, false};
 
 public:
     Game() = default;
